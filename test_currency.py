@@ -5,11 +5,13 @@
 #No PEP8 or Pyflakes warnings or errors
 #Each requirement, write test first, then make test to pass
 
+import pytest
 from currency import convert
 
 def test_convert_same_currency():
     assert convert([], 1, current="USD", to="USD") == 1
     assert convert([], 2, current="USD", to="USD") == 2
 
-def test_convert_usd_to_euros():
-    assert convert( rates=[('USD', "EUR", 0.74)], values, current='USD', to='EUR')
+def test_convert_using_multiplication():
+    assert convert(rates=[('USD', "EUR", 0.74)], value=3, current='USD', to='EUR') 
+    2) == 1.35
